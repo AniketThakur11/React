@@ -4,9 +4,12 @@ import authService, { AuthService } from '../../appwrite/auth';
 import { logout } from '../../store/authSlice'
 function LogoutBtn(props) {
     const dispatch = useDispatch()
-    const logoutHandler = () => {
-        authService.logOut.then.catch((error) => {
 
+    const logoutHandler = () => {
+        authService.logout().then(() => {
+            dispatch(logout())
+        }).catch((error) => {
+            throw (error)
         })
     }
     return (
