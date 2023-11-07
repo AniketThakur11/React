@@ -2,7 +2,7 @@ import { useState } from "react";
 import Chai from "./chai"
 
 function App() {
-  let [counter, Setcounter] = useState(1)
+  let [counter, Setcounter] = useState()
   const addvalue = () => {
     if (counter < 20) {
       counter = Math.floor(Math.random() * 20) + 1;
